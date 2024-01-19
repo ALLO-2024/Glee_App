@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct NoteRecordView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                HStack {
+                    Spacer().frame(width: 13)
+                    
+                    BackButton(action : {
+                        presentationMode.wrappedValue.dismiss()
+                    }, image: "BackButton")
+                }
+            }
+        }
     }
 }
 

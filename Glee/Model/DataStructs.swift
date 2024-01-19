@@ -6,3 +6,17 @@
 //
 
 import Foundation
+import SwiftUI
+
+//MARK: BackButton
+struct BackButton: View {
+    let action:() -> Void
+    var image : String
+    
+    var body : some View {
+        Button (action : action) {
+            Image(image)
+                .frame(width: 24, height: 24)
+        }
+    }
+}
