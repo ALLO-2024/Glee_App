@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct NoteRecordView: View {
+    @State private var isSearchBarVisible = true
+    @State var word : String = ""
+    
     var body: some View {
         VStack {
-            
+            if isSearchBarVisible {
+                SearchBar(isVisible : $isSearchBarVisible)
+                    .transition(.slide)
+            }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
