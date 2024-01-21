@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct NoteRecordView: View {
-    @Environment(\.presentationMode) var presentationMode
-    
     var body: some View {
         VStack {
             
@@ -18,12 +16,12 @@ struct NoteRecordView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 HStack {
-                    Spacer().frame(width: 13)
-                    
-                    BackButton(action : {
-                        presentationMode.wrappedValue.dismiss()
-                    }, image: "BackButton")
+                    BackButton()
                 }
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ToolBarTail()
             }
         }
     }

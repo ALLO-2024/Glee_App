@@ -10,13 +10,35 @@ import SwiftUI
 
 //MARK: BackButton
 struct BackButton: View {
-    let action:() -> Void
-    var image : String
+    @Environment(\.presentationMode) var presentationMode
     
     var body : some View {
-        Button (action : action) {
-            Image(image)
+        Button (action : {
+            presentationMode.wrappedValue.dismiss()
+        }) {
+            Image("BackButton")
                 .frame(width: 24, height: 24)
+        }
+    }
+}
+
+struct ToolBarTail : View {
+    var body : some View {
+        HStack {
+            Button(action: {
+                
+            }, label: {
+                Image("Modify")
+                    .frame(width: 24, height: 24)
+            })
+            Spacer().frame(width: 12)
+            
+            Button(action: {
+                
+            }, label: {
+                Image("Download")
+                    .frame(width: 24, height: 24)
+            })
         }
     }
 }
