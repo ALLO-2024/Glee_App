@@ -24,25 +24,24 @@ struct BackButton: View {
 
 //MARK: ToolBar
 struct ToolBarTail : View {
-    @State private var isSearchBarVisible = false
+    @Binding var isSearchBarVisible : Bool
     
     var body : some View {
         HStack {
             Button(action: {
+                withAnimation {
                     isSearchBarVisible.toggle()
-                    if isSearchBarVisible {
-                        print("isSearchvisble")
-                    } else {
-                        print("unvisible")
-                    }
+                }
             }, label: {
-                Image("Modify")
+                Image("Search")
                     .frame(width: 24, height: 24)
             })
             Spacer().frame(width: 12)
             
             Button(action: {
-                
+                withAnimation {
+                    isSearchBarVisible.toggle()
+                }
             }, label: {
                 Image("Download")
                     .frame(width: 24, height: 24)
@@ -53,7 +52,6 @@ struct ToolBarTail : View {
 
 //MARK: Search
 struct SearchBar : View {
-    @Binding var isVisible: Bool
     @State var word : String = ""
     
     var body: some View {
@@ -79,3 +77,48 @@ struct SearchBar : View {
         .frame(height: 40)
     }
 }
+
+//MARK: simpleText
+
+struct simpleText : View {
+    var categoty : String
+    var size : CGFloat
+    @Binding var isChoice : Bool
+    
+    var body: some View {
+        VStack {
+            if isChoice {
+                Text(categoty)
+                    .font(
+                    Font.custom("Apple SD Gothic Neo", size: 16)
+                    .weight(.bold)
+                    )
+                    .foregroundColor(.black)
+                
+                Spacer().frame(height: 8)
+                
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: size, height: 2)
+                    .background(Color(red: 0.94, green: 0.4, blue: 0.27))
+            }
+            else {
+                Text(categoty)
+                    .font(
+                    Font.custom("Apple SD Gothic Neo", size: 16)
+                    .weight(.bold)
+                    )
+                    .foregroundColor(Color(red: 0.73, green: 0.73, blue: 0.73))
+                
+                Spacer().frame(height: 8)
+                
+                Rectangle()
+                    .foregroundColor(.clear)
+                    .frame(width: size, height: 2)
+                    .background(Color(red: 0.85, green: 0.85, blue: 0.85))
+            }
+        }
+    }
+}
+
+//MARK: Language
