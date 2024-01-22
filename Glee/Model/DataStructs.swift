@@ -143,3 +143,51 @@ struct Language : View{
         }
     }
 }
+
+//MARK: Login
+struct Login : View {
+    @Binding var text : String
+    @State var input : String = ""
+    var name : String
+    var content : String
+    
+    var body: some View {
+        VStack {
+            HStack(alignment: .center, spacing: 0) {
+                Text(name)
+                    .font(
+                        Font.custom("Apple SD Gothic Neo", size: 16)
+                            .weight(.semibold)
+                    )
+                    .foregroundColor(.black)
+            }
+            .padding(.leading, 0)
+            .padding(.trailing, 316)
+            .padding(.vertical, 0)
+            .frame(height: 19, alignment: .leading)
+            
+            Spacer().frame(height: 8)
+            
+            HStack {
+                Spacer().frame(width: 16)
+                
+                HStack(alignment: .center, spacing: 10) {
+                    TextField(content, text: $text)
+                        .font(
+                            Font.custom("Apple SD Gothic Neo", size: 12)
+                                .weight(.medium)
+                        )
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 16)
+                .frame(height: 52, alignment: .leading)
+                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                .cornerRadius(10)
+                
+                Spacer().frame(width: 16)
+            }
+        }
+    }
+}
