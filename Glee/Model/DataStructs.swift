@@ -122,3 +122,24 @@ struct simpleText : View {
 }
 
 //MARK: Language
+struct Language : View{
+    var language : String
+    
+    var body: some View {
+        HStack {
+            Spacer().frame(width: 16)
+            
+            Circle()
+                .frame(width: 6,height: 6)
+                .foregroundColor(Color(red: 0.94, green: 0.4, blue: 0.27))
+            
+            Text(language)
+                .font(
+                Font.custom("Apple SD Gothic Neo", size: 14)
+                .weight(.bold)
+                )
+                .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
+            Spacer()
+        }
+    }
+}
