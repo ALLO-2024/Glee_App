@@ -153,16 +153,19 @@ struct Login : View {
     
     var body: some View {
         VStack {
-            HStack(alignment: .center, spacing: 0) {
+            HStack {
+                Spacer().frame(width: 16)
+                
                 Text(name)
                     .font(
                         Font.custom("Apple SD Gothic Neo", size: 16)
                             .weight(.semibold)
                     )
                     .foregroundColor(.black)
+                
+                Spacer()
             }
             .padding(.leading, 0)
-            .padding(.trailing, 316)
             .padding(.vertical, 0)
             .frame(height: 19, alignment: .leading)
             
@@ -179,6 +182,7 @@ struct Login : View {
                         )
                         .foregroundColor(.black)
                         .textContentType(.username)
+                    
                     Spacer()
                 }
                 .padding(.horizontal, 10)

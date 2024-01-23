@@ -14,7 +14,7 @@
 		D262523C2B552D240055EA83 /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262523B2B552D240055EA83 /* MemoryGame.swift */; };
 		D262523E2B552DE60055EA83 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262523D2B552DE60055EA83 /* EmojiMemoryGame.swift */; };
 		D26252462B57D5D00055EA83 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252452B57D5D00055EA83 /* LoginView.swift */; };
-		D26252482B580A590055EA83 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252472B580A590055EA83 /* MainView.swift */; };
+		D26252482B580A590055EA83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252472B580A590055EA83 /* HomeView.swift */; };
 		D26252632B5812FF0055EA83 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26252502B5812FE0055EA83 /* Poppins-ExtraLight.ttf */; };
 		D26252642B5812FF0055EA83 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26252512B5812FE0055EA83 /* Poppins-ThinItalic.ttf */; };
 		D26252652B5812FF0055EA83 /* Poppins-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26252522B5812FE0055EA83 /* Poppins-ExtraLightItalic.ttf */; };
@@ -36,8 +36,8 @@
 		D26252752B5812FF0055EA83 /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D26252622B5812FF0055EA83 /* Poppins-MediumItalic.ttf */; };
 		D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252782B5A71D00055EA83 /* NoteRecordView.swift */; };
 		D262527C2B5A7F500055EA83 /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527B2B5A7F500055EA83 /* DataStructs.swift */; };
-		D262527E2B5EA2900055EA83 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527D2B5EA2900055EA83 /* LoginEmail.swift */; };
-		D26252802B5EA2B70055EA83 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527F2B5EA2B70055EA83 /* SignUp.swift */; };
+		D262527E2B5EA2900055EA83 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527D2B5EA2900055EA83 /* LoginEmailView.swift */; };
+		D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527F2B5EA2B70055EA83 /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,7 @@
 		D262523B2B552D240055EA83 /* MemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		D262523D2B552DE60055EA83 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		D26252452B57D5D00055EA83 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D26252472B580A590055EA83 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D26252472B580A590055EA83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D26252502B5812FE0055EA83 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
 		D26252512B5812FE0055EA83 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
 		D26252522B5812FE0055EA83 /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
@@ -72,8 +72,8 @@
 		D26252762B58144B0055EA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D26252782B5A71D00055EA83 /* NoteRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRecordView.swift; sourceTree = "<group>"; };
 		D262527B2B5A7F500055EA83 /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
-		D262527D2B5EA2900055EA83 /* LoginEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmail.swift; sourceTree = "<group>"; };
-		D262527F2B5EA2B70055EA83 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		D262527D2B5EA2900055EA83 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
+		D262527F2B5EA2B70055EA83 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,12 +164,12 @@
 		D26252772B5A70620055EA83 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D26252472B580A590055EA83 /* MainView.swift */,
+				D26252472B580A590055EA83 /* HomeView.swift */,
 				D262522F2B5523760055EA83 /* ContentView.swift */,
 				D26252452B57D5D00055EA83 /* LoginView.swift */,
 				D26252782B5A71D00055EA83 /* NoteRecordView.swift */,
-				D262527D2B5EA2900055EA83 /* LoginEmail.swift */,
-				D262527F2B5EA2B70055EA83 /* SignUp.swift */,
+				D262527D2B5EA2900055EA83 /* LoginEmailView.swift */,
+				D262527F2B5EA2B70055EA83 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,12 +272,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D262523C2B552D240055EA83 /* MemoryGame.swift in Sources */,
-				D262527E2B5EA2900055EA83 /* LoginEmail.swift in Sources */,
-				D26252482B580A590055EA83 /* MainView.swift in Sources */,
+				D262527E2B5EA2900055EA83 /* LoginEmailView.swift in Sources */,
+				D26252482B580A590055EA83 /* HomeView.swift in Sources */,
 				D26252302B5523760055EA83 /* ContentView.swift in Sources */,
 				D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */,
 				D262522E2B5523760055EA83 /* GleeApp.swift in Sources */,
-				D26252802B5EA2B70055EA83 /* SignUp.swift in Sources */,
+				D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */,
 				D26252462B57D5D00055EA83 /* LoginView.swift in Sources */,
 				D262527C2B5A7F500055EA83 /* DataStructs.swift in Sources */,
 				D262523E2B552DE60055EA83 /* EmojiMemoryGame.swift in Sources */,

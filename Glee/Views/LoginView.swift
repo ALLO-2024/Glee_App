@@ -36,12 +36,20 @@ struct LoginView: View {
                     }
                     .contentShape(Rectangle())
                     
-                    Image("App_Image")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 250)
+                    Spacer().frame(height: 64)
                     
-                    Spacer().frame(height: 150)
+                    Rectangle()
+                      .foregroundColor(.clear)
+                      .frame(width: 264)
+                      .background(
+                        Image("AppImage")
+                          .resizable()
+                          .aspectRatio(contentMode: .fill)
+                          .frame(width: 264, height: 264)
+                          .clipped()
+                      )
+                    
+                    Spacer()
                 }
                 
                 Group {
@@ -83,7 +91,7 @@ struct LoginView: View {
                 Spacer().frame(height: 35)
                 
                 HStack(spacing: 24) {
-                    NavigationLink(destination : SignUp()) {
+                    NavigationLink(destination : SignUpView()) {
                         Text("이메일 회원가입")
                             .font(
                                 Font.custom("Apple SD Gothic Neo", size: 14)
@@ -98,7 +106,7 @@ struct LoginView: View {
                                 .weight(.medium)
                         )
                         .foregroundColor(Color(red: 0.25, green: 0.25, blue: 0.25))
-                    NavigationLink(destination : LoginEmail()) {
+                    NavigationLink(destination : LoginEmailView()) {
                         Text("이메일 로그인")
                             .font(
                                 Font.custom("Apple SD Gothic Neo", size: 14)
