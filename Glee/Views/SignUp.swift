@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct EmailLogin: View {
+struct SignUp: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct EmailLogin_Previews: PreviewProvider {
+struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        EmailLogin()
+        SignUp()
     }
 }

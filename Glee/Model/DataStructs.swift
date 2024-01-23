@@ -178,6 +178,7 @@ struct Login : View {
                                 .weight(.medium)
                         )
                         .foregroundColor(.black)
+                        .textContentType(.username)
                     Spacer()
                 }
                 .padding(.horizontal, 10)

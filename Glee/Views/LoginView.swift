@@ -83,7 +83,7 @@ struct LoginView: View {
                 Spacer().frame(height: 35)
                 
                 HStack(spacing: 24) {
-                    NavigationLink(destination : SignIn()) {
+                    NavigationLink(destination : SignUp()) {
                         Text("이메일 회원가입")
                             .font(
                                 Font.custom("Apple SD Gothic Neo", size: 14)
@@ -98,7 +98,7 @@ struct LoginView: View {
                                 .weight(.medium)
                         )
                         .foregroundColor(Color(red: 0.25, green: 0.25, blue: 0.25))
-                    NavigationLink(destination : EmailLogin()) {
+                    NavigationLink(destination : LoginEmail()) {
                         Text("이메일 로그인")
                             .font(
                                 Font.custom("Apple SD Gothic Neo", size: 14)
