@@ -12,7 +12,12 @@ struct SignUpView: View {
     @State private var Password : String = ""
     @State private var Confirm : String = ""
     @State private var opacity : Double = 0.5
+    @State private var EmailCheck : Bool = false
+    @State private var PasswordCheck : Bool = false
+    @State private var ConfirmCheck : Bool = true
     
+    private var EmailContent : String = ""
+    private var PasswordContent : String = ""
     
     var body: some View {
         VStack {
@@ -45,12 +50,22 @@ struct SignUpView: View {
                 HStack {
                     Spacer().frame(width: 16)
                     
-                    Text(verbatim : "Ex. hello2000@email.com")
-                      .font(
-                        Font.custom("Apple SD Gothic Neo", size: 10)
-                          .weight(.medium)
-                      )
-                      .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
+                    if !EmailCheck {
+                        Text(verbatim : "Ex. hello2000@email.com")
+                            .font(
+                                Font.custom("Apple SD Gothic Neo", size: 10)
+                                    .weight(.medium)
+                            )
+                            .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
+                    }
+                    else {
+                        Text("올바르지 않은 이메일 형식입니다.")
+                          .font(
+                            Font.custom("Apple SD Gothic Neo", size: 10)
+                              .weight(.medium)
+                          )
+                          .foregroundColor(Color(red: 0.94, green: 0.04, blue: 0.04))
+                    }
                     
                     Spacer()
                 }
@@ -67,12 +82,22 @@ struct SignUpView: View {
                 HStack {
                     Spacer().frame(width: 16)
                     
-                    Text("영문, 숫자, 특수기호(_ @ ? !) 조합 8자 이상")
-                      .font(
-                        Font.custom("Apple SD Gothic Neo", size: 10)
-                          .weight(.medium)
-                      )
-                      .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
+                    if !PasswordCheck {
+                        Text("영문, 숫자, 특수기호(_ @ ? !) 조합 8자 이상")
+                            .font(
+                                Font.custom("Apple SD Gothic Neo", size: 10)
+                                    .weight(.medium)
+                            )
+                            .foregroundColor(Color(red: 0.38, green: 0.38, blue: 0.38))
+                    }
+                    else {
+                        Text("올바르지 않은 비밀번호 형식입니다.")
+                          .font(
+                            Font.custom("Apple SD Gothic Neo", size: 10)
+                              .weight(.medium)
+                          )
+                          .foregroundColor(Color(red: 0.94, green: 0.04, blue: 0.04))
+                    }
                     
                     Spacer()
                 }
@@ -82,7 +107,28 @@ struct SignUpView: View {
                 Login(text: $Confirm, name: "비밀번호 확인", content: "비밀번호를 다시 한 번 입력해주세요")
                     .onChange(of: Confirm) { newValue in
                         updateOpacity()
+                        if Confirm != Password {
+                            self.ConfirmCheck = false
+                        }
+                        else {
+                            self.ConfirmCheck = true
+                        }
                     }
+                
+                if !ConfirmCheck {
+                    HStack {
+                        Spacer().frame(width: 16)
+                        
+                        Text("비밀번호가 일치하지 않습니다.")
+                            .font(
+                                Font.custom("Apple SD Gothic Neo", size: 10)
+                                    .weight(.medium)
+                            )
+                            .foregroundColor(Color(red: 0.94, green: 0.04, blue: 0.04))
+                        
+                        Spacer()
+                    }
+                }
             }
             
             Spacer()
