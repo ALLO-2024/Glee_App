@@ -138,7 +138,7 @@ struct SignUpView: View {
                     HStack {
                         Spacer().frame(width: 19)
                         
-                        NavigationLink(destination : SinUpBView(), label : {
+                        NavigationLink(destination : SingUpBView(), label : {
                             HStack(alignment: .center, spacing: 10) {
                                 Spacer()
                                 
