@@ -38,6 +38,7 @@
 		D262527C2B5A7F500055EA83 /* DataStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527B2B5A7F500055EA83 /* DataStructs.swift */; };
 		D262527E2B5EA2900055EA83 /* LoginEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527D2B5EA2900055EA83 /* LoginEmailView.swift */; };
 		D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527F2B5EA2B70055EA83 /* SignUpView.swift */; };
+		D26252822B5FEFC00055EA83 /* SinUpBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252812B5FEFC00055EA83 /* SinUpBView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		D262527B2B5A7F500055EA83 /* DataStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructs.swift; sourceTree = "<group>"; };
 		D262527D2B5EA2900055EA83 /* LoginEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmailView.swift; sourceTree = "<group>"; };
 		D262527F2B5EA2B70055EA83 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D26252812B5FEFC00055EA83 /* SinUpBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinUpBView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				D26252782B5A71D00055EA83 /* NoteRecordView.swift */,
 				D262527D2B5EA2900055EA83 /* LoginEmailView.swift */,
 				D262527F2B5EA2B70055EA83 /* SignUpView.swift */,
+				D26252812B5FEFC00055EA83 /* SinUpBView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				D26252302B5523760055EA83 /* ContentView.swift in Sources */,
 				D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */,
 				D262522E2B5523760055EA83 /* GleeApp.swift in Sources */,
+				D26252822B5FEFC00055EA83 /* SinUpBView.swift in Sources */,
 				D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */,
 				D26252462B57D5D00055EA83 /* LoginView.swift in Sources */,
 				D262527C2B5A7F500055EA83 /* DataStructs.swift in Sources */,

@@ -196,3 +196,41 @@ struct Login : View {
         }
     }
 }
+
+struct Agree : View {
+    @Binding var agree : Bool
+    @State private var color : Color = Color(red: 0.88, green: 0.88, blue: 0.88)
+    var content : String
+    
+    var body: some View {
+        HStack {
+            Spacer().frame(width: 16)
+            
+            HStack(alignment: .center, spacing: 10) {
+                Image("Check_White")
+                    .frame(width: 10.4604, height: 10)
+            }
+                .frame(width: 16, height: 16, alignment: .center)
+                .background(color)
+                .cornerRadius(100)
+                
+            Spacer().frame(width: 14.77)
+            
+            Text(content)
+              .font(
+                Font.custom("Apple SD Gothic Neo", size: 16)
+                  .weight(.semibold)
+              )
+              .foregroundColor(.black)
+            
+            Spacer()
+        }
+        .onChange(of: agree) { newValue in
+            updateColor()
+        }
+    }
+    
+    private func updateColor() {
+            color = agree ? Color(red: 0.94, green: 0.4, blue: 0.27) : Color(red: 0.88, green: 0.88, blue: 0.88)
+        }
+}
