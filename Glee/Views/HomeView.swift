@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
     var Category : [String] = ["교양", "전공"]
     
     var body: some View {
@@ -16,22 +16,24 @@ struct MainView: View {
                 Spacer().frame(height: 47)
                 
                 //MARK: Navigation
-                HStack{
-                    Spacer().frame(width: 16)
-                    
-                    Text("Glee")
-                        .font(
-                            Font.custom("Poppins", size: 24)
-                                .weight(.bold)
-                        )
-                        .foregroundColor(Color(red: 0.94, green: 0.4, blue: 0.27))
-                    
-                    Spacer()
-                    
-                    Image("Profile")
-                        .frame(width: 25, height: 25)
-                    
-                    Spacer().frame(width: 16)
+                Group {
+                    HStack{
+                        Spacer().frame(width: 16)
+                        
+                        Text("Glee")
+                            .font(
+                                Font.custom("Poppins", size: 24)
+                                    .weight(.bold)
+                            )
+                            .foregroundColor(Color(red: 0.94, green: 0.4, blue: 0.27))
+                        
+                        Spacer()
+                        
+                        Image("Profile")
+                            .frame(width: 25, height: 25)
+                        
+                        Spacer().frame(width: 16)
+                    }
                 }
                 
                 ZStack {
@@ -190,6 +192,6 @@ struct MainView: View {
 
 struct Main_Preview: PreviewProvider {
     static var previews: some View {
-        MainView()
+        HomeView()
     }
 }

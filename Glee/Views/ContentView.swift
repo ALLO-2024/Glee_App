@@ -80,7 +80,7 @@ struct ContentView: View {
                 .frame(height: UIScreen.main.bounds.height/2)
                 
                 Spacer().frame(height: 83)
-                NavigationLink(destination : LoginView()) {
+                NavigationLink(destination : HomeView()) {
                     HStack {
                         Spacer().frame(width: 19)
                         
@@ -118,6 +118,5 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
         LoginView()
-        MainView()
     }
 }

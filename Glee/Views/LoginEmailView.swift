@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginEmail: View {
+struct LoginEmailView: View {
     @State private var Email : String = ""
     @State private var Password : String = ""
     @State private var opacity : Double = 0.5
@@ -131,6 +131,6 @@ struct LoginEmail: View {
 
 struct LoginEmail_PreiView: PreviewProvider {
     static var previews: some View {
-        LoginEmail()
+        LoginEmailView()
     }
 }
