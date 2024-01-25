@@ -238,9 +238,9 @@ struct Select : View {
                     Spacer()
                     
                     Image(imageName)
-                        .onTapGesture {
-                            isSelect.toggle()
-                        }
+                }
+                .onTapGesture {
+                    isSelect.toggle()
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 16)
