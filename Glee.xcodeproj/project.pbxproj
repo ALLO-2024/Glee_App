@@ -40,6 +40,7 @@
 		D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262527F2B5EA2B70055EA83 /* SignUpView.swift */; };
 		D26252822B5FEFC00055EA83 /* SingUpBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252812B5FEFC00055EA83 /* SingUpBView.swift */; };
 		D26252842B60F8DB0055EA83 /* SignUpCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252832B60F8DB0055EA83 /* SignUpCView.swift */; };
+		D26252862B610C140055EA83 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26252852B610C140055EA83 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		D262527F2B5EA2B70055EA83 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D26252812B5FEFC00055EA83 /* SingUpBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpBView.swift; sourceTree = "<group>"; };
 		D26252832B60F8DB0055EA83 /* SignUpCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpCView.swift; sourceTree = "<group>"; };
+		D26252852B610C140055EA83 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				D262527B2B5A7F500055EA83 /* DataStructs.swift */,
+				D26252852B610C140055EA83 /* ImagePicker.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D26252862B610C140055EA83 /* ImagePicker.swift in Sources */,
 				D262523C2B552D240055EA83 /* MemoryGame.swift in Sources */,
 				D262527E2B5EA2900055EA83 /* LoginEmailView.swift in Sources */,
 				D26252482B580A590055EA83 /* HomeView.swift in Sources */,

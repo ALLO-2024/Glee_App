@@ -197,6 +197,63 @@ struct Login : View {
     }
 }
 
+struct Select : View {
+    @Binding var isSelect : Bool
+    var name : String
+    var content : String
+    var imageName : String
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer().frame(width: 16)
+                
+                Text(name)
+                    .font(
+                        Font.custom("Apple SD Gothic Neo", size: 16)
+                            .weight(.semibold)
+                    )
+                    .foregroundColor(.black)
+                
+                Spacer()
+            }
+            .padding(.leading, 0)
+            .padding(.vertical, 0)
+            .frame(height: 19, alignment: .leading)
+            
+            Spacer().frame(height: 8)
+            
+            HStack {
+                Spacer().frame(width: 16)
+                
+                HStack(alignment: .center, spacing: 10) {
+                    Text(content)
+                        .font(
+                            Font.custom("Apple SD Gothic Neo", size: 12)
+                                .weight(.medium)
+                        )
+                        .foregroundColor(.black)
+                        .textContentType(.username)
+                    
+                    Spacer()
+                    
+                    Image(imageName)
+                        .onTapGesture {
+                            isSelect.toggle()
+                        }
+                }
+                .padding(.horizontal, 10)
+                .padding(.vertical, 16)
+                .frame(height: 52, alignment: .leading)
+                .background(Color(red: 0.96, green: 0.96, blue: 0.96))
+                .cornerRadius(10)
+                
+                Spacer().frame(width: 16)
+            }
+        }
+    }
+}
+
 struct Agree : View {
     @Binding var agree : Bool
     @State private var color : Color = Color(red: 0.88, green: 0.88, blue: 0.88)
@@ -234,3 +291,4 @@ struct Agree : View {
             color = agree ? Color(red: 0.94, green: 0.4, blue: 0.27) : Color(red: 0.88, green: 0.88, blue: 0.88)
         }
 }
+
