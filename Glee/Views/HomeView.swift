@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    var Category : [String] = ["교양", "전공"]
+    private var Category : [String] = ["교양", "전공"]
+    private var WordType : [String] = ["n", "v"]
     @State private var Kor : [String] = ["전략", "제공하다", "플랫폼"]
     @State private var Eng : [String] = ["Strategy", "Supply", "Platfrom"]
+    @State private var WordTypes : [Int] = [0, 1, 0]
     
     var body: some View {
         NavigationView {
@@ -38,55 +40,87 @@ struct HomeView: View {
                     }
                 }
                 
-                VStack {
-                    HStack {
-                        Spacer().frame(width: 16)
-                        
+                Spacer().frame(height: 16)
+                
+                Group{
+                    VStack {
                         HStack {
-                            Spacer()
-                        }
+                            Spacer().frame(width: 16)
+                            
+                            HStack {
+                                Spacer()
+                            }
                             .frame(height: 88)
                             .background(
-                              LinearGradient(
-                                stops: [
-                                  Gradient.Stop(color: Color(red: 0.78, green: 0.84, blue: 0.92), location: 0.00),
-                                  Gradient.Stop(color: Color(red: 0.79, green: 0.92, blue: 0.78), location: 1.00),
-                                ],
-                                startPoint: UnitPoint(x: 0.95, y: 1.32),
-                                endPoint: UnitPoint(x: 1.1, y: -0.7)
-                              )
+                                LinearGradient(
+                                    stops: [
+                                        Gradient.Stop(color: Color(red: 0.78, green: 0.84, blue: 0.92), location: 0.00),
+                                        Gradient.Stop(color: Color(red: 0.79, green: 0.92, blue: 0.78), location: 1.00),
+                                    ],
+                                    startPoint: UnitPoint(x: 0.95, y: 1.32),
+                                    endPoint: UnitPoint(x: 1.1, y: -0.7)
+                                )
                             )
                             .cornerRadius(8)
+                            
+                            Spacer().frame(width: 16)
+                        }
                         
-                        Spacer().frame(width: 16)
-                    }
-                    
-                    HStack {
-                        Spacer().frame(width: 16)
+                        HStack {
+                            Spacer().frame(width: 16)
+                            
+                            Text("북마크한 단어")
+                                .font(
+                                    Font.custom("Apple SD Gothic Neo", size: 18)
+                                        .weight(.bold)
+                                )
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                        }
                         
-                        Text("북마크한 단어")
-                          .font(
-                            Font.custom("Apple SD Gothic Neo", size: 18)
-                              .weight(.bold)
-                          )
-                          .foregroundColor(.black)
+                        Spacer().frame(height: 8)
                         
-                        Spacer()
-                    }
-                      
-                    Spacer().frame(height: 8)
-                    
-                    HStack {
-                        Spacer().frame(width: 16)
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            VStack(alignment: .leading, spacing: 8) {
-                                
+                        HStack {
+                            Spacer().frame(width: 16)
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    ForEach(0..<Kor.count) { num in
+                                        VStack(alignment: .leading, spacing: 8) {
+                                            HStack {
+                                                Text(Kor[num])
+                                                    .font(
+                                                        Font.custom("Apple SD Gothic Neo", size: 14)
+                                                            .weight(.semibold)
+                                                    )
+                                                    .foregroundColor(.black)
+                                                
+                                                Spacer()
+                                                
+                                                Image("BookMarked")
+                                                    .frame(width: 7.97993, height: 10.24)
+                                            }
+                                            
+                                          HStack {
+//                                                Text(WordTypes[WordType[num]])
+//                                                    .font(
+//                                                        Font.custom("Apple SD Gothic Neo", size: 6)
+//                                                            .weight(.heavy)
+//                                                    )
+//                                                    .multilineTextAlignment(.center)
+//                                                    .foregroundColor(Color(red: 0.44, green: 0.44, blue: 0.44))
+//                                                    .frame(width: 8, height: 8, alignment: .center)
+                                          }
+                                            
+                                        }
+                                        .padding(.horizontal, 16)
+                                        .padding(.vertical, 0)
+                                        .frame(width: 160, height: 92, alignment: .leading)
+                                        .background(.white)
+                                        .cornerRadius(20)
+                                    }
+                                }
                             }
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 0)
-                            .frame(width: 160, height: 92, alignment: .leading)
-                            .background(.white)
-                            .cornerRadius(20)
                         }
                     }
                 }
