@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     var Category : [String] = ["교양", "전공"]
+    @State private var Kor : [String] = ["전략", "제공하다", "플랫폼"]
+    @State private var Eng : [String] = ["Strategy", "Supply", "Platfrom"]
     
     var body: some View {
         NavigationView {
@@ -36,15 +38,61 @@ struct HomeView: View {
                     }
                 }
                 
-                ZStack {
+                VStack {
                     HStack {
+                        Spacer().frame(width: 16)
                         
+                        HStack {
+                            Spacer()
+                        }
+                            .frame(height: 88)
+                            .background(
+                              LinearGradient(
+                                stops: [
+                                  Gradient.Stop(color: Color(red: 0.78, green: 0.84, blue: 0.92), location: 0.00),
+                                  Gradient.Stop(color: Color(red: 0.79, green: 0.92, blue: 0.78), location: 1.00),
+                                ],
+                                startPoint: UnitPoint(x: 0.95, y: 1.32),
+                                endPoint: UnitPoint(x: 1.1, y: -0.7)
+                              )
+                            )
+                            .cornerRadius(8)
+                        
+                        Spacer().frame(width: 16)
+                    }
+                    
+                    HStack {
+                        Spacer().frame(width: 16)
+                        
+                        Text("북마크한 단어")
+                          .font(
+                            Font.custom("Apple SD Gothic Neo", size: 18)
+                              .weight(.bold)
+                          )
+                          .foregroundColor(.black)
+                        
+                        Spacer()
+                    }
+                      
+                    Spacer().frame(height: 8)
+                    
+                    HStack {
+                        Spacer().frame(width: 16)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            VStack(alignment: .leading, spacing: 8) {
+                                
+                            }
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 0)
+                            .frame(width: 160, height: 92, alignment: .leading)
+                            .background(.white)
+                            .cornerRadius(20)
+                        }
                     }
                 }
-                .frame(height: 220)
-                .padding(19)
-                .cornerRadius(20)
                 
+                Spacer().frame(height: 26)
+            
                 //MARK: Scroll Control
                 HStack {
                     Spacer().frame(width: 16)
