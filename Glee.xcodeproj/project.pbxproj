@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D217E84A2B6AA94200BB4C12 /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */; };
 		D262522E2B5523760055EA83 /* GleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262522D2B5523760055EA83 /* GleeApp.swift */; };
 		D26252302B5523760055EA83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262522F2B5523760055EA83 /* ContentView.swift */; };
 		D26252322B5523770055EA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26252312B5523770055EA83 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
 		D262522A2B5523760055EA83 /* Glee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D262522D2B5523760055EA83 /* GleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GleeApp.swift; sourceTree = "<group>"; };
 		D262522F2B5523760055EA83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				D262527F2B5EA2B70055EA83 /* SignUpView.swift */,
 				D26252812B5FEFC00055EA83 /* SingUpBView.swift */,
 				D26252832B60F8DB0055EA83 /* SignUpCView.swift */,
+				D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				D26252862B610C140055EA83 /* ImagePicker.swift in Sources */,
 				D262523C2B552D240055EA83 /* MemoryGame.swift in Sources */,
 				D262527E2B5EA2900055EA83 /* LoginEmailView.swift in Sources */,
+				D217E84A2B6AA94200BB4C12 /* HomeSearchView.swift in Sources */,
 				D26252482B580A590055EA83 /* HomeView.swift in Sources */,
 				D26252302B5523760055EA83 /* ContentView.swift in Sources */,
 				D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */,
