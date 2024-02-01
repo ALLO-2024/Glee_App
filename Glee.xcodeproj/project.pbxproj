@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D217E84A2B6AA94200BB4C12 /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */; };
+		D217E84F2B6BD4B400BB4C12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D217E84E2B6BD4B400BB4C12 /* .gitignore */; };
+		D217E8562B6BD58000BB4C12 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8552B6BD58000BB4C12 /* APIConstants.swift */; };
 		D262522E2B5523760055EA83 /* GleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262522D2B5523760055EA83 /* GleeApp.swift */; };
 		D26252302B5523760055EA83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262522F2B5523760055EA83 /* ContentView.swift */; };
 		D26252322B5523770055EA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26252312B5523770055EA83 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 
 /* Begin PBXFileReference section */
 		D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
+		D217E84E2B6BD4B400BB4C12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D217E8552B6BD58000BB4C12 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D262522A2B5523760055EA83 /* Glee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D262522D2B5523760055EA83 /* GleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GleeApp.swift; sourceTree = "<group>"; };
 		D262522F2B5523760055EA83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,9 +99,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D217E8542B6BD55800BB4C12 /* APIConstant */ = {
+			isa = PBXGroup;
+			children = (
+				D217E8552B6BD58000BB4C12 /* APIConstants.swift */,
+			);
+			path = APIConstant;
+			sourceTree = "<group>";
+		};
 		D26252212B5523760055EA83 = {
 			isa = PBXGroup;
 			children = (
+				D217E84E2B6BD4B400BB4C12 /* .gitignore */,
 				D262522C2B5523760055EA83 /* Glee */,
 				D262522B2B5523760055EA83 /* Products */,
 			);
@@ -114,6 +127,7 @@
 		D262522C2B5523760055EA83 /* Glee */ = {
 			isa = PBXGroup;
 			children = (
+				D217E8542B6BD55800BB4C12 /* APIConstant */,
 				D262527A2B5A7F310055EA83 /* Model */,
 				D26252772B5A70620055EA83 /* Views */,
 				D26252762B58144B0055EA83 /* Info.plist */,
@@ -256,6 +270,7 @@
 				D26252712B5812FF0055EA83 /* Poppins-Black.ttf in Resources */,
 				D262526F2B5812FF0055EA83 /* Poppins-LightItalic.ttf in Resources */,
 				D26252722B5812FF0055EA83 /* Poppins-Thin.ttf in Resources */,
+				D217E84F2B6BD4B400BB4C12 /* .gitignore in Resources */,
 				D26252632B5812FF0055EA83 /* Poppins-ExtraLight.ttf in Resources */,
 				D26252732B5812FF0055EA83 /* Poppins-SemiBold.ttf in Resources */,
 				D26252702B5812FF0055EA83 /* Poppins-Bold.ttf in Resources */,
@@ -287,6 +302,7 @@
 				D262523C2B552D240055EA83 /* MemoryGame.swift in Sources */,
 				D262527E2B5EA2900055EA83 /* LoginEmailView.swift in Sources */,
 				D217E84A2B6AA94200BB4C12 /* HomeSearchView.swift in Sources */,
+				D217E8562B6BD58000BB4C12 /* APIConstants.swift in Sources */,
 				D26252482B580A590055EA83 /* HomeView.swift in Sources */,
 				D26252302B5523760055EA83 /* ContentView.swift in Sources */,
 				D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */,
