@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
-    var Category : [String] = ["교양", "전공"]
+    private var Category : [String] = ["교양", "전공"]
+    private var WordType : [String] = ["n", "v"]
+    @State private var Kor : [String] = ["전략", "제공하다", "플랫폼"]
+    @State private var Eng : [String] = ["Strategy", "Supply", "Platfrom"]
+    @State private var Example : [String] = ["지속 가능한 비즈니스 전략", "소비자에게 콘텐츠를 제공하다.", "소비자에게 플랫폼을 제공하다."]
+    @State private var WordTypes : [Int] = [0, 1, 0]
     
     var body: some View {
         NavigationView {
@@ -36,15 +41,111 @@ struct HomeView: View {
                     }
                 }
                 
-                ZStack {
-                    HStack {
+                Spacer().frame(height: 16)
+                
+                Group{
+                    VStack {
+                        HStack {
+                            Spacer().frame(width: 16)
+                            
+                            HStack {
+                                Spacer()
+                            }
+                            .frame(height: 88)
+                            .background(
+                                LinearGradient(
+                                    stops: [
+                                        Gradient.Stop(color: Color(red: 0.78, green: 0.84, blue: 0.92), location: 0.00),
+                                        Gradient.Stop(color: Color(red: 0.79, green: 0.92, blue: 0.78), location: 1.00),
+                                    ],
+                                    startPoint: UnitPoint(x: 0.95, y: 1.32),
+                                    endPoint: UnitPoint(x: 1.1, y: -0.7)
+                                )
+                            )
+                            .cornerRadius(8)
+                            
+                            Spacer().frame(width: 16)
+                        }
                         
+                        HStack {
+                            Spacer().frame(width: 16)
+                            
+                            Text("북마크한 단어")
+                                .font(
+                                    Font.custom("Apple SD Gothic Neo", size: 18)
+                                        .weight(.bold)
+                                )
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                        }
+                        
+                        Spacer().frame(height: 8)
+                        
+                        HStack {
+                            Spacer().frame(width: 16)
+                            ScrollView(.horizontal) {
+                                HStack {
+                                    ForEach(0..<Kor.count) { num in
+                                        Group {
+                                            VStack(alignment: .leading, spacing: 8) {
+                                                HStack {
+                                                    Text(Kor[num])
+                                                        .font(
+                                                            Font.custom("Apple SD Gothic Neo", size: 14)
+                                                                .weight(.semibold)
+                                                        )
+                                                        .foregroundColor(.black)
+                                                    
+                                                    Spacer()
+                                                    
+                                                    Image("BookMarked")
+                                                        .frame(width: 7.97993, height: 10.24)
+                                                }
+                                                
+                                                HStack {
+                                                    VStack(alignment: .center, spacing: 10) {
+                                                        Text(WordType[WordTypes[num]])
+                                                            .font(
+                                                                Font.custom("Apple SD Gothic Neo", size: 6)
+                                                                    .weight(.heavy)
+                                                            )
+                                                            .multilineTextAlignment(.center)
+                                                            .foregroundColor(Color(red: 0.44, green: 0.44, blue: 0.44))
+                                                    }
+                                                        .padding(3)
+                                                        .frame(width: 10, height: 10, alignment: .center)
+                                                        .background(Color(red: 0.88, green: 0.88, blue: 0.88))
+                                                        .cornerRadius(10000)
+                                                        
+                                                    
+                                                    Text(Eng[num])
+                                                      .font(
+                                                        Font.custom("Apple SD Gothic Neo", size: 12)
+                                                          .weight(.medium)
+                                                      )
+                                                      .multilineTextAlignment(.center)
+                                                      .foregroundColor(.black)
+                                                }
+                                                
+                                                changeColor(ex: Example[num], kor: Kor[num])
+                                                
+                                            }
+                                            .padding(.horizontal, 16)
+                                            .padding(.vertical, 0)
+                                            .frame(width: 160, height: 92, alignment: .leading)
+                                            .background(.white)
+                                            .cornerRadius(20)
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                .frame(height: 220)
-                .padding(19)
-                .cornerRadius(20)
                 
+                Spacer().frame(height: 26)
+            
                 //MARK: Scroll Control
                 HStack {
                     Spacer().frame(width: 16)
@@ -67,12 +168,10 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        
-                    }, label: {
+                    NavigationLink(destination: HomeSearchView()) {
                         Image("Search")
                             .frame(width: 14, height: 14)
-                    })
+                    }
                     
                     Spacer().frame(width: 20)
                     
@@ -186,6 +285,28 @@ struct HomeView: View {
             .navigationBarBackButtonHidden()
             .background(Color(red: 0.97, green: 0.97, blue: 0.97))
         }
+    }
+    
+    func changeColor(ex: String, kor: String) -> Text {
+        guard let range = ex.range(of: kor) else {
+                return Text("오류")
+                .font(Font.custom("Apple SD Gothic Neo", size: 10))
+                .foregroundColor(.black)
+        }
+        
+        let prefix = String(ex[..<range.lowerBound])
+        let matchingString = String(ex[range])
+        let suffix = String(ex[range.upperBound...])
+
+        return Text(prefix)
+                .font(Font.custom("Apple SD Gothic Neo", size: 10))
+                .foregroundColor(.black) +
+                Text(matchingString)
+                .font(Font.custom("Apple SD Gothic Neo", size: 10))
+                .foregroundColor(Color(red: 0.94, green: 0.4, blue: 0.27)) +
+                Text(suffix)
+                .font(Font.custom("Apple SD Gothic Neo", size: 10))
+                .foregroundColor(.black)
     }
 }
 
