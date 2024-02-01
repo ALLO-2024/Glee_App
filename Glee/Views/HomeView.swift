@@ -168,12 +168,10 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        
-                    }, label: {
+                    NavigationLink(destination: HomeSearchView()) {
                         Image("Search")
                             .frame(width: 14, height: 14)
-                    })
+                    }
                     
                     Spacer().frame(width: 20)
                     
