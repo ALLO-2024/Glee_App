@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct SignUpCView: View {
+    private var Email : String
+    private var Password : String
+    
+    @EnvironmentObject var network : Network
+    
     @State private var openPhoto : Bool = false
     @State private var image : UIImage = UIImage()
     @State private var isSelect : Bool = false
@@ -15,6 +20,11 @@ struct SignUpCView: View {
     @State private var name : String = ""
     @State private var language : String = ""
     @State private var opacity : Double = 0.5
+    
+    init(Email: String, Password : String) {
+        self.Email = Email
+        self.Password = Password
+    }
     
     var body: some View {
         NavigationView {
@@ -162,7 +172,7 @@ struct SignUpCView: View {
 
 struct SignUpCView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpCView()
+        SignUpCView(Email: "email", Password: "password")
     }
 }
 

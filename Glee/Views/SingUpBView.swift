@@ -3,6 +3,9 @@
 import SwiftUI
 
 struct SingUpBView: View {
+    private var Email : String
+    private var Password : String
+    
     @State private var all : Bool = false
     @State private var age : Bool = false
     @State private var personal : Bool = false
@@ -13,6 +16,11 @@ struct SingUpBView: View {
     @State private var allColor : Color = Color(red: 0.38, green: 0.38, blue: 0.38)
     
     private var colors : [Color] = [Color(red: 0.38, green: 0.38, blue: 0.38), Color(red: 0.94, green: 0.4, blue: 0.27)]
+    
+    init(Email : String, Password : String) {
+        self.Email = Email
+        self.Password = Password
+    }
     
     var body: some View {
         NavigationView {
@@ -155,7 +163,7 @@ struct SingUpBView: View {
                 
                 //MARK: Button -> navigationStack으로 수정할 필요 있다
                 Group {
-                    NavigationLink(destination: SignUpCView(), isActive: Binding<Bool>(get : {
+                    NavigationLink(destination: SignUpCView(Email: Email, Password: Password), isActive: Binding<Bool>(get : {
                         return age && service && personal
                     }, set : {newValue in }),label: {
                         HStack {
@@ -213,6 +221,6 @@ struct SingUpBView: View {
 
 struct SinUpBView_Previews: PreviewProvider {
     static var previews: some View {
-        SingUpBView()
+        SingUpBView.init(Email: "email", Password: "password")
     }
 }

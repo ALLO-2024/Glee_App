@@ -138,7 +138,7 @@ struct SignUpView: View {
                     HStack {
                         Spacer().frame(width: 19)
                         
-                        NavigationLink(destination : SingUpBView(), label : {
+                        NavigationLink(destination : SingUpBView.init(Email : Email, Password: Password), label : {
                             HStack(alignment: .center, spacing: 10) {
                                 Spacer()
                                 

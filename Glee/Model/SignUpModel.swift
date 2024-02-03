@@ -8,7 +8,7 @@
 import Foundation
 
 struct SignupResponse : Codable {
-    let isSucces : Bool
+    let isSuccess : Bool
     let code : Int
     let message : String
     let result : SignUpResult
