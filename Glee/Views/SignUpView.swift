@@ -165,12 +165,11 @@ struct SignUpView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .frame(height: UIScreen.main.bounds.height)
-            .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func updateOpacity() {
-        print("update")
         if !Email.isEmpty && !Password.isEmpty && !Confirm.isEmpty {
             opacity = 1.0
         } else {

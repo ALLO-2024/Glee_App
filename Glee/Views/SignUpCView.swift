@@ -20,6 +20,8 @@ struct SignUpCView: View {
     @State private var name : String = ""
     @State private var language : String = ""
     @State private var opacity : Double = 0.5
+    @State var signUp : SignupResponse?
+    @State private var userSignUpRequest = UserSignUpRequest()
     
     init(Email: String, Password : String) {
         self.Email = Email
@@ -92,25 +94,25 @@ struct SignUpCView: View {
                             Text("영어")
                                 .onTapGesture {
                                     language = "ENGLISH"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "영어"
                                 }
                             Text("베트남어")
                                 .onTapGesture {
                                     language = "VIETNAMESE"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "베트남어"
                                 }
                             Text("중국어")
                                 .onTapGesture {
                                     language = "CHINESE"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "중국어"
                                 }
                             Text("일본어")
                                 .onTapGesture {
                                     language = "JAPANESE"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "일본어"
                                 }
                         }
@@ -121,30 +123,39 @@ struct SignUpCView: View {
                 
                 Group {
                     HStack {
-                        NavigationLink(destination: ContentView(), isActive: Binding<Bool>(get : {
-                            return !name.isEmpty && !language.isEmpty
-                        }, set : {newValue in }),label: {
-                            Spacer().frame(width: 19)
-                            
-                            HStack(alignment: .center, spacing: 10) {
-                                Spacer()
-                                
-                                Text("다음")
-                                    .font(
-                                        Font.custom("Apple SD Gothic Neo", size: 18)
-                                            .weight(.heavy)
-                                    )
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(.white)
-                                
-                                Spacer()
+                        Spacer().frame(width: 19)
+
+                        Button(action: {
+                            print("pressed")
+                            userSignUpRequest.email = Email
+                            userSignUpRequest.isOptionAgr = true
+                            userSignUpRequest.language = language
+                            userSignUpRequest.password = Password
+                            userSignUpRequest.nickname = name
+                            if !name.isEmpty && !language.isEmpty {
+                                Network().SignUp(userRequest: userSignUpRequest, file: image) {
+                                    signUp in
+                                    self.signUp = signUp
+                                    if signUp!.isSuccess {
+                                        print("isSuccess")
+                                    }
+                                }
                             }
-                            .frame(height: 60, alignment: .center)
-                            .background(Color(red: 0.94, green: 0.4, blue: 0.27).opacity(opacity))
-                            .cornerRadius(20)
-                            
-                            Spacer().frame(width: 19)
+                        },
+                           label: {
+                            Text("다음")
+                            .font(
+                                Font.custom("Apple SD Gothic Neo", size: 18)
+                                    .weight(.heavy)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
                         })
+                        .frame(width: UIScreen.main.bounds.width - 38 ,height: 60, alignment: .center)
+                        .background(Color(red: 0.94, green: 0.4, blue: 0.27).opacity(opacity))
+                        .cornerRadius(20)
+                        
+                        Spacer().frame(width: 19)
                     }
                 }
                 
@@ -156,8 +167,8 @@ struct SignUpCView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .frame(height: UIScreen.main.bounds.height)
-            .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func updateOpacity() {

@@ -8,10 +8,10 @@
 import Foundation
 
 struct SignupResponse : Codable {
-    let isSuccess : Bool
-    let code : Int
-    let message : String
-    let result : SignUpResult
+    var isSuccess : Bool
+    var code : Int
+    var message : String
+    var result : SignUpResult
 }
 
 struct SignUpResult: Codable {
@@ -19,9 +19,17 @@ struct SignUpResult: Codable {
 }
 
 struct UserSignUpRequest {
-    let email : String
-    let password : String
-    let nickname : String
-    let isOptionAgr : Bool
-    let language : String
+    var email : String
+    var password : String
+    var nickname : String
+    var isOptionAgr : Bool
+    var language : String
+    
+    init() {
+        email = ""
+        password = ""
+        nickname = ""
+        isOptionAgr = true
+        language = ""
+    }
 }

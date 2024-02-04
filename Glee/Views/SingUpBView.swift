@@ -195,8 +195,8 @@ struct SingUpBView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .frame(height: UIScreen.main.bounds.height)
-            .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func updateOpacity() {
