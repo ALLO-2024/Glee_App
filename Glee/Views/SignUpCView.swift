@@ -136,8 +136,11 @@ struct SignUpCView: View {
                                 Network().SignUp(userRequest: userSignUpRequest, file: image) {
                                     signUp in
                                     self.signUp = signUp
-                                    if signUp!.isSuccess {
+                                    if signUp == nil {
                                         print("isSuccess")
+                                    }
+                                    else {
+                                        
                                     }
                                 }
                             }

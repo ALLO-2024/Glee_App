@@ -18,7 +18,7 @@ struct SignUpResult: Codable {
     
 }
 
-struct UserSignUpRequest {
+struct UserSignUpRequest : Codable {
     var email : String
     var password : String
     var nickname : String
