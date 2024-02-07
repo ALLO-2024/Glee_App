@@ -11,7 +11,7 @@ struct SignupResponse : Codable {
     var isSuccess : Bool
     var code : Int
     var message : String
-    var result : SignUpResult
+    var result : SignUpResult?
 }
 
 struct SignUpResult: Codable {

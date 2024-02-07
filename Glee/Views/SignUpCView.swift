@@ -10,9 +10,9 @@ import SwiftUI
 struct SignUpCView: View {
     private var Email : String
     private var Password : String
+    @State private var AlertMessage : String = ""
     
-    @EnvironmentObject var network : Network
-    
+    private var network : Network = Network()
     @State private var openPhoto : Bool = false
     @State private var image : UIImage = UIImage()
     @State private var isSelect : Bool = false
@@ -22,6 +22,7 @@ struct SignUpCView: View {
     @State private var opacity : Double = 0.5
     @State private var signUp : SignupResponse?
     @State private var userSignUpRequest = UserSignUpRequest()
+    @State private var isAlert : Bool = false
     
     init(Email: String, Password : String) {
         self.Email = Email
@@ -133,14 +134,19 @@ struct SignUpCView: View {
                             userSignUpRequest.password = Password
                             userSignUpRequest.nickname = name
                             if !name.isEmpty && !language.isEmpty {
-                                Network().SignUp(userRequest: userSignUpRequest, file: image) { 
+                                Network().SignUp(userRequest: userSignUpRequest, file: image) {response in
                                     DispatchQueue.main.async {
-                                        self.signUp = self.network.signUp
+                                        self.signUp = response
                                         if self.signUp == nil {
                                             print("signUp is nil")
                                         } else {
                                             if self.signUp!.isSuccess {
+                                                isAlert = false
                                                 print("isSuccess")
+                                            }
+                                            else {
+                                                isAlert = true
+                                                AlertMessage = signUp!.message
                                             }
                                         }
                                     }
@@ -148,17 +154,24 @@ struct SignUpCView: View {
                             }
                         },
                            label: {
-                            Text("다음")
-                            .font(
-                                Font.custom("Apple SD Gothic Neo", size: 18)
-                                    .weight(.heavy)
-                            )
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.white)
+                            HStack {
+                                Spacer()
+                                Text("다음")
+                                    .font(
+                                        Font.custom("Apple SD Gothic Neo", size: 18)
+                                            .weight(.heavy)
+                                    )
+                                    .multilineTextAlignment(.center)
+                                    .foregroundColor(.white)
+                                Spacer()
+                            }
                         })
-                        .frame(width: UIScreen.main.bounds.width - 38 ,height: 60, alignment: .center)
+                        .frame(height: 60, alignment: .center)
                         .background(Color(red: 0.94, green: 0.4, blue: 0.27).opacity(opacity))
                         .cornerRadius(20)
+                        .alert(isPresented : $isAlert) {
+                            Alert(title: Text("로그인 실패"), message: Text(AlertMessage), dismissButton: .default(Text("확인")))
+                        }
                         
                         Spacer().frame(width: 19)
                     }
@@ -174,6 +187,7 @@ struct SignUpCView: View {
             .frame(height: UIScreen.main.bounds.height)
         }
         .navigationBarBackButtonHidden(true)
+        .environmentObject(self.network)
     }
     
     private func updateOpacity() {
