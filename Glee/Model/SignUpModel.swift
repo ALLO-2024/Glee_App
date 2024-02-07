@@ -18,6 +18,12 @@ struct SignUpResult: Codable {
     
 }
 
+struct SocialSignUpRequest : Codable {
+    var nickname : String
+    var isOptionAgr : Bool
+    var language : String
+}
+
 struct UserSignUpRequest : Codable {
     var email : String
     var password : String

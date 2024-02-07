@@ -20,7 +20,7 @@ struct SignUpCView: View {
     @State private var name : String = ""
     @State private var language : String = ""
     @State private var opacity : Double = 0.5
-    @State var signUp : SignupResponse?
+    @State private var signUp : SignupResponse?
     @State private var userSignUpRequest = UserSignUpRequest()
     
     init(Email: String, Password : String) {
@@ -133,14 +133,16 @@ struct SignUpCView: View {
                             userSignUpRequest.password = Password
                             userSignUpRequest.nickname = name
                             if !name.isEmpty && !language.isEmpty {
-                                Network().SignUp(userRequest: userSignUpRequest, file: image) {
-                                    signUp in
-                                    self.signUp = signUp
-                                    if signUp == nil {
-                                        print("isSuccess")
-                                    }
-                                    else {
-                                        
+                                Network().SignUp(userRequest: userSignUpRequest, file: image) { 
+                                    DispatchQueue.main.async {
+                                        self.signUp = self.network.signUp
+                                        if self.signUp == nil {
+                                            print("signUp is nil")
+                                        } else {
+                                            if self.signUp!.isSuccess {
+                                                print("isSuccess")
+                                            }
+                                        }
                                     }
                                 }
                             }
