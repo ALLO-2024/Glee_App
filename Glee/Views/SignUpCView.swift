@@ -170,7 +170,7 @@ struct SignUpCView: View {
                         .background(Color(red: 0.94, green: 0.4, blue: 0.27).opacity(opacity))
                         .cornerRadius(20)
                         .alert(isPresented : $isAlert) {
-                            Alert(title: Text("로그인 실패"), message: Text(AlertMessage), dismissButton: .default(Text("확인")))
+                            Alert(title: Text("회원가입 실패"), message: Text(AlertMessage), dismissButton: .default(Text("확인")))
                         }
                         
                         Spacer().frame(width: 19)

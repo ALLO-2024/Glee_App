@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct LoginEmailView: View {
+    private var network : Network = Network()
+    
     @State private var Email : String = ""
     @State private var Password : String = ""
     @State private var opacity : Double = 0.5
     @State private var isError : Bool = false
     @State private var warning : String = "존재하지 않는 이메일입니다."
+    @State private var login : LoginResponse?
+    @State private var AlertMessage : String = ""
+    @State private var isAlert : Bool = false
+    @State private var tag : Int? = nil
     
     var body: some View {
         VStack {
@@ -86,6 +92,29 @@ struct LoginEmailView: View {
             Group {
                 Button(action: {
                     print("Email = \(Email), password = \(Password)")
+                    if !Email.isEmpty && !Password.isEmpty {
+                        network.login(email: Email, password: Password) { response in
+                            DispatchQueue.main.async {
+                                self.login = response
+                                if self.login == nil {
+                                    print("login is nil")
+                                } else {
+                                    if self.login!.isSuccess {
+                                        isAlert = false
+                                        tag = 1
+                                        NavigationLink(destination: HomeView(), tag: 1, selection: self.$tag) {
+                                            EmptyView()
+                                        }
+                                    }
+                                    else {
+                                        isAlert = true
+                                        AlertMessage = login!.message
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
                 }, label: {
                     HStack {
                         Spacer().frame(width: 19)
@@ -110,6 +139,9 @@ struct LoginEmailView: View {
                         Spacer().frame(width: 19)
                     }
                 })
+                .alert(isPresented : $isAlert) {
+                    Alert(title : Text("로그인 실패"), message: Text(AlertMessage), dismissButton: .default(Text("확인")))
+                }
             }
             
             Spacer().frame(height: 74)
@@ -120,7 +152,6 @@ struct LoginEmailView: View {
     }
     
     private func updateOpacity() {
-        print("update")
         if !Email.isEmpty && !Password.isEmpty {
             opacity = 1.0
         } else {

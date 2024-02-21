@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct LoginResponse {
+struct LoginResponse : Codable {
     var isSuccess : Bool
     var code : Int
     var message : String
     var result : LoginResult?
 }
 
-struct LoginResult {
+struct LoginResult : Codable {
     var accessToken : String
     var refreshToken : String
 }
