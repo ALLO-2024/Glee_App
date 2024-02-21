@@ -13,6 +13,7 @@ struct SignUpCView: View {
     @State private var AlertMessage : String = ""
     
     private var network : Network = Network()
+    @State private var tag : Int? = nil
     @State private var openPhoto : Bool = false
     @State private var image : UIImage = UIImage()
     @State private var isSelect : Bool = false
@@ -142,7 +143,10 @@ struct SignUpCView: View {
                                         } else {
                                             if self.signUp!.isSuccess {
                                                 isAlert = false
-                                                print("isSuccess")
+                                                tag = 1
+                                                NavigationLink(destination : LoginView(), tag : 1, selection: self.$tag) {
+                                                    EmptyView()
+                                                }
                                             }
                                             else {
                                                 isAlert = true
