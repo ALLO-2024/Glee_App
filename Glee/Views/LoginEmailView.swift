@@ -92,7 +92,6 @@ struct LoginEmailView: View {
                 
                 Group {
                     Button(action: {
-                        print("Email = \(Email), password = \(Password)")
                         if !Email.isEmpty && !Password.isEmpty {
                             network.login(email: Email, password: Password) { response in
                                 DispatchQueue.main.async {
@@ -103,12 +102,16 @@ struct LoginEmailView: View {
                                         if self.login!.isSuccess {
                                             isAlert = false
                                             tag = 1
+                                            if !isAlert {
+                                                print("is not ")
+                                            }
                                             NavigationLink(destination: HomeView(), tag: 1, selection: self.$tag) {
                                                 EmptyView()
                                             }
                                         }
                                         else {
                                             isAlert = true
+                                            isError = true
                                             AlertMessage = login!.message
                                         }
                                     }
