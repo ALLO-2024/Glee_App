@@ -19,6 +19,7 @@ struct LoginEmailView: View {
     @State private var AlertMessage : String = ""
     @State private var isAlert : Bool = false
     @State private var tag : Int? = nil
+    @State private var JMTToken : String = ""
     
     var body: some View {
         NavigationView {
@@ -105,7 +106,7 @@ struct LoginEmailView: View {
                                             if !isAlert {
                                                 print("is not ")
                                             }
-                                            NavigationLink(destination: HomeView(), tag: 1, selection: self.$tag) {
+                                            NavigationLink(destination: HomeView(JMTToken : JMTToken), tag: 1, selection: self.$tag) {
                                                 EmptyView()
                                             }
                                         }

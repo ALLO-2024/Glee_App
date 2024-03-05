@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D207194D2B711DAC00F1F066 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D207194C2B711DAC00F1F066 /* Alamofire */; };
+		D20FC4812B971069005DE3A1 /* LoadWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20FC4802B971069005DE3A1 /* LoadWordModel.swift */; };
 		D217E84A2B6AA94200BB4C12 /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */; };
 		D217E84F2B6BD4B400BB4C12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D217E84E2B6BD4B400BB4C12 /* .gitignore */; };
 		D217E8562B6BD58000BB4C12 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8552B6BD58000BB4C12 /* APIConstants.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20FC4802B971069005DE3A1 /* LoadWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWordModel.swift; sourceTree = "<group>"; };
 		D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
 		D217E84E2B6BD4B400BB4C12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D217E8552B6BD58000BB4C12 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				D26252852B610C140055EA83 /* ImagePicker.swift */,
 				D217E8592B6BD96F00BB4C12 /* SignUpModel.swift */,
 				D22C8FB02B7BBE170010607C /* LoginModel.swift */,
+				D20FC4802B971069005DE3A1 /* LoadWordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 				D26252302B5523760055EA83 /* ContentView.swift in Sources */,
 				D217E8582B6BD8D700BB4C12 /* NetworkResult.swift in Sources */,
 				D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */,
+				D20FC4812B971069005DE3A1 /* LoadWordModel.swift in Sources */,
 				D262522E2B5523760055EA83 /* GleeApp.swift in Sources */,
 				D26252822B5FEFC00055EA83 /* SingUpBView.swift in Sources */,
 				D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */,
