@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D207194D2B711DAC00F1F066 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D207194C2B711DAC00F1F066 /* Alamofire */; };
+		D20FC4812B971069005DE3A1 /* LoadWordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20FC4802B971069005DE3A1 /* LoadWordModel.swift */; };
 		D217E84A2B6AA94200BB4C12 /* HomeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */; };
 		D217E84F2B6BD4B400BB4C12 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D217E84E2B6BD4B400BB4C12 /* .gitignore */; };
 		D217E8562B6BD58000BB4C12 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8552B6BD58000BB4C12 /* APIConstants.swift */; };
 		D217E8582B6BD8D700BB4C12 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8572B6BD8D700BB4C12 /* NetworkResult.swift */; };
 		D217E85A2B6BD96F00BB4C12 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E8592B6BD96F00BB4C12 /* SignUpModel.swift */; };
+		D217E85C2B6D2FDD00BB4C12 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D217E85B2B6D2FDD00BB4C12 /* Network.swift */; };
+		D22C8FB12B7BBE170010607C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22C8FB02B7BBE170010607C /* LoginModel.swift */; };
 		D262522E2B5523760055EA83 /* GleeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262522D2B5523760055EA83 /* GleeApp.swift */; };
 		D26252302B5523760055EA83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D262522F2B5523760055EA83 /* ContentView.swift */; };
 		D26252322B5523770055EA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D26252312B5523770055EA83 /* Assets.xcassets */; };
@@ -49,11 +53,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D20FC4802B971069005DE3A1 /* LoadWordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadWordModel.swift; sourceTree = "<group>"; };
 		D217E8492B6AA94200BB4C12 /* HomeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSearchView.swift; sourceTree = "<group>"; };
 		D217E84E2B6BD4B400BB4C12 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D217E8552B6BD58000BB4C12 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D217E8572B6BD8D700BB4C12 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		D217E8592B6BD96F00BB4C12 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		D217E85B2B6D2FDD00BB4C12 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D22C8FB02B7BBE170010607C /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		D262522A2B5523760055EA83 /* Glee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D262522D2B5523760055EA83 /* GleeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GleeApp.swift; sourceTree = "<group>"; };
 		D262522F2B5523760055EA83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D207194D2B711DAC00F1F066 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +116,7 @@
 			children = (
 				D217E8552B6BD58000BB4C12 /* APIConstants.swift */,
 				D217E8572B6BD8D700BB4C12 /* NetworkResult.swift */,
+				D217E85B2B6D2FDD00BB4C12 /* Network.swift */,
 			);
 			path = APIConstant;
 			sourceTree = "<group>";
@@ -210,6 +219,8 @@
 				D262527B2B5A7F500055EA83 /* DataStructs.swift */,
 				D26252852B610C140055EA83 /* ImagePicker.swift */,
 				D217E8592B6BD96F00BB4C12 /* SignUpModel.swift */,
+				D22C8FB02B7BBE170010607C /* LoginModel.swift */,
+				D20FC4802B971069005DE3A1 /* LoadWordModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +241,9 @@
 			dependencies = (
 			);
 			name = Glee;
+			packageProductDependencies = (
+				D207194C2B711DAC00F1F066 /* Alamofire */,
+			);
 			productName = Glee;
 			productReference = D262522A2B5523760055EA83 /* Glee.app */;
 			productType = "com.apple.product-type.application";
@@ -258,6 +272,9 @@
 				Base,
 			);
 			mainGroup = D26252212B5523760055EA83;
+			packageReferences = (
+				D207194B2B711DAC00F1F066 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = D262522B2B5523760055EA83 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -304,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D22C8FB12B7BBE170010607C /* LoginModel.swift in Sources */,
 				D26252862B610C140055EA83 /* ImagePicker.swift in Sources */,
 				D262523C2B552D240055EA83 /* MemoryGame.swift in Sources */,
 				D217E85A2B6BD96F00BB4C12 /* SignUpModel.swift in Sources */,
@@ -314,10 +332,12 @@
 				D26252302B5523760055EA83 /* ContentView.swift in Sources */,
 				D217E8582B6BD8D700BB4C12 /* NetworkResult.swift in Sources */,
 				D26252792B5A71D00055EA83 /* NoteRecordView.swift in Sources */,
+				D20FC4812B971069005DE3A1 /* LoadWordModel.swift in Sources */,
 				D262522E2B5523760055EA83 /* GleeApp.swift in Sources */,
 				D26252822B5FEFC00055EA83 /* SingUpBView.swift in Sources */,
 				D26252802B5EA2B70055EA83 /* SignUpView.swift in Sources */,
 				D26252842B60F8DB0055EA83 /* SignUpCView.swift in Sources */,
+				D217E85C2B6D2FDD00BB4C12 /* Network.swift in Sources */,
 				D26252462B57D5D00055EA83 /* LoginView.swift in Sources */,
 				D262527C2B5A7F500055EA83 /* DataStructs.swift in Sources */,
 				D262523E2B552DE60055EA83 /* EmojiMemoryGame.swift in Sources */,
@@ -523,6 +543,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D207194B2B711DAC00F1F066 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D207194C2B711DAC00F1F066 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D207194B2B711DAC00F1F066 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D26252222B5523760055EA83 /* Project object */;
 }

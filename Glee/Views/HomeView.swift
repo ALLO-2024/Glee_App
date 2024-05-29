@@ -15,6 +15,12 @@ struct HomeView: View {
     @State private var Example : [String] = ["지속 가능한 비즈니스 전략", "소비자에게 콘텐츠를 제공하다.", "소비자에게 플랫폼을 제공하다."]
     @State private var WordTypes : [Int] = [0, 1, 0]
     
+    private var JMTToken : String
+    
+    init (JMTToken : String) {
+        self.JMTToken = JMTToken
+    }
+    
     var body: some View {
         NavigationView {
             VStack (spacing : 0){
@@ -313,6 +319,6 @@ struct HomeView: View {
 
 struct Main_Preview: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView(JMTToken: "")
     }
 }

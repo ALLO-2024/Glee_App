@@ -138,7 +138,7 @@ struct SignUpView: View {
                     HStack {
                         Spacer().frame(width: 19)
                         
-                        NavigationLink(destination : SingUpBView(), label : {
+                        NavigationLink(destination : SingUpBView.init(Email : Email, Password: Password), label : {
                             HStack(alignment: .center, spacing: 10) {
                                 Spacer()
                                 
@@ -165,12 +165,11 @@ struct SignUpView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .frame(height: UIScreen.main.bounds.height)
-            .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden(true)
     }
     
     private func updateOpacity() {
-        print("update")
         if !Email.isEmpty && !Password.isEmpty && !Confirm.isEmpty {
             opacity = 1.0
         } else {

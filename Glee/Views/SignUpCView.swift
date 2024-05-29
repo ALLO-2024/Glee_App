@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SignUpCView: View {
+    private var Email : String
+    private var Password : String
+    @State private var AlertMessage : String = ""
+    
+    private var network : Network = Network()
+    @State private var tag : Int? = nil
     @State private var openPhoto : Bool = false
     @State private var image : UIImage = UIImage()
     @State private var isSelect : Bool = false
@@ -15,6 +21,14 @@ struct SignUpCView: View {
     @State private var name : String = ""
     @State private var language : String = ""
     @State private var opacity : Double = 0.5
+    @State private var signUp : SignupResponse?
+    @State private var userSignUpRequest = UserSignUpRequest()
+    @State private var isAlert : Bool = false
+    
+    init(Email: String, Password : String) {
+        self.Email = Email
+        self.Password = Password
+    }
     
     var body: some View {
         NavigationView {
@@ -82,25 +96,25 @@ struct SignUpCView: View {
                             Text("영어")
                                 .onTapGesture {
                                     language = "ENGLISH"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "영어"
                                 }
                             Text("베트남어")
                                 .onTapGesture {
                                     language = "VIETNAMESE"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "베트남어"
                                 }
                             Text("중국어")
                                 .onTapGesture {
                                     language = "CHINESE"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "중국어"
                                 }
                             Text("일본어")
                                 .onTapGesture {
                                     language = "JAPANESE"
-                                    isSelect.toggle()
+                                    isSelect = true
                                     selectedLanguage = "일본어"
                                 }
                         }
@@ -111,14 +125,41 @@ struct SignUpCView: View {
                 
                 Group {
                     HStack {
-                        NavigationLink(destination: ContentView(), isActive: Binding<Bool>(get : {
-                            return !name.isEmpty && !language.isEmpty
-                        }, set : {newValue in }),label: {
-                            Spacer().frame(width: 19)
-                            
-                            HStack(alignment: .center, spacing: 10) {
+                        Spacer().frame(width: 19)
+
+                        Button(action: {
+                            print("pressed")
+                            userSignUpRequest.email = Email
+                            userSignUpRequest.isOptionAgr = true
+                            userSignUpRequest.language = language
+                            userSignUpRequest.password = Password
+                            userSignUpRequest.nickname = name
+                            if !name.isEmpty && !language.isEmpty {
+                                Network().SignUp(userRequest: userSignUpRequest, file: image) {response in
+                                    DispatchQueue.main.async {
+                                        self.signUp = response
+                                        if self.signUp == nil {
+                                            print("signUp is nil")
+                                        } else {
+                                            if self.signUp!.isSuccess {
+                                                isAlert = false
+                                                tag = 1
+                                                NavigationLink(destination : LoginView(), tag : 1, selection: self.$tag) {
+                                                    EmptyView()
+                                                }
+                                            }
+                                            else {
+                                                isAlert = true
+                                                AlertMessage = signUp!.message
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                           label: {
+                            HStack {
                                 Spacer()
-                                
                                 Text("다음")
                                     .font(
                                         Font.custom("Apple SD Gothic Neo", size: 18)
@@ -126,15 +167,17 @@ struct SignUpCView: View {
                                     )
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
-                                
                                 Spacer()
                             }
-                            .frame(height: 60, alignment: .center)
-                            .background(Color(red: 0.94, green: 0.4, blue: 0.27).opacity(opacity))
-                            .cornerRadius(20)
-                            
-                            Spacer().frame(width: 19)
                         })
+                        .frame(height: 60, alignment: .center)
+                        .background(Color(red: 0.94, green: 0.4, blue: 0.27).opacity(opacity))
+                        .cornerRadius(20)
+                        .alert(isPresented : $isAlert) {
+                            Alert(title: Text("회원가입 실패"), message: Text(AlertMessage), dismissButton: .default(Text("확인")))
+                        }
+                        
+                        Spacer().frame(width: 19)
                     }
                 }
                 
@@ -146,8 +189,9 @@ struct SignUpCView: View {
             }
             .edgesIgnoringSafeArea(.all)
             .frame(height: UIScreen.main.bounds.height)
-            .navigationBarBackButtonHidden()
         }
+        .navigationBarBackButtonHidden(true)
+        .environmentObject(self.network)
     }
     
     private func updateOpacity() {
@@ -162,7 +206,7 @@ struct SignUpCView: View {
 
 struct SignUpCView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpCView()
+        SignUpCView(Email: "email", Password: "password")
     }
 }
 
